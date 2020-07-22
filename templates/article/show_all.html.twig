@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>ALL ARTICLES</h1>
+    {% for article in articles %}
+    <div class="container">
+        <ul>
+            <li>{{ article.title }}</li>
+            <li>{{ article.subject }}</li>
+            <li>{{ article.author }}</li>
+            <li><img src="{{ article.image }}"></li>
+            <li>{{ article.category.category }}</li>
+        </ul>
+       <a href="{{ path('article_show_one', {'id': article.id}) }}" class="btn">See More</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
