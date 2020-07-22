@@ -3,7 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\CommentRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use DateTime;
 
 /**
  * @ORM\Entity(repositoryClass=CommentRepository::class)
@@ -36,11 +38,6 @@ class Comment
      * @ORM\Column(type="datetime")
      */
     private $posted_at;
-
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $rate;
 
     public function getId(): ?int
     {
@@ -91,18 +88,6 @@ class Comment
     public function setPostedAt(\DateTimeInterface $posted_at): self
     {
         $this->posted_at = $posted_at;
-
-        return $this;
-    }
-
-    public function getRate(): ?int
-    {
-        return $this->rate;
-    }
-
-    public function setRate(?int $rate): self
-    {
-        $this->rate = $rate;
 
         return $this;
     }

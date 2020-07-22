@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}{{ category }}{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -13,8 +13,9 @@
                     <li>{{ article.author }}</li>
                     <li><img src="{{ article.image }}"></li>
                 </ul>
-                {#<a href="{{ path('wild_show', {'slug': article.slug}) }}" type="submit" name="" value="" class="btn mt-auto">See More</a>#}
+                <a href="{{ path('article_show_one', {'id': article.id}) }}" class="btn">See More</a>
             </div>
         {% endfor %}
+        <a href="{{ path('articles_show_all') }}">Back to Blog</a>
     </div>
 {% endblock %}

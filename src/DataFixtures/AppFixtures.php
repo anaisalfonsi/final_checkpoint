@@ -2,7 +2,6 @@
 
 namespace App\DataFixtures;
 
-use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker\Factory;
@@ -60,6 +59,7 @@ class AppFixtures extends Fixture
             $user->setPassword($this->encoder->encodePassword($user, 'password'));
             $user->setRoles(['ROLE_USER']);
             $manager->persist($user);
+            $this->addReference('author_' . $i, $user);
         }
         
         // ARTICLE CATEGORIES
@@ -85,6 +85,19 @@ class AppFixtures extends Fixture
             $slug = $slugify->generate($article->getTitle());
             $article->setSlug($slug);
             $manager->persist($article);
+            $this->addReference('article_' . $i, $article);
+        }
+
+        // 100 COMMENTS
+        for ($i = 0; $i < 100; $i++) {
+            $comment = new Comment();
+            $comment->setComment($faker->text);
+            $comment->setPostedAt($faker->dateTimeBetween($startDate = '-3 years', $endDate = 'now', $timezone = null));
+            for ($b = 0; $b < 10; $b++) {
+                $comment->setAuthor($this->getReference('author_' . $faker->numberBetween(0, 9)));
+                $comment->setArticle($this->getReference('article_' . $faker->numberBetween(0, 9)));
+            }
+            $manager->persist($comment);
         }
 
         $manager->flush();

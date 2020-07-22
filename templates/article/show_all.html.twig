@@ -12,9 +12,9 @@
             <li>{{ article.subject }}</li>
             <li>{{ article.author }}</li>
             <li><img src="{{ article.image }}"></li>
-            <li>{{ article.category }}</li>
+            <li>{{ article.category.category }}</li>
         </ul>
-       <a href="{{ path('wild_show', {'slug': article.slug}) }}" type="submit" name="" value="" class="btn mt-auto">See More</a>
+       <a href="{{ path('article_show_one', {'id': article.id}) }}" class="btn">See More</a>
     </div>
     {% endfor %}
 </div>
