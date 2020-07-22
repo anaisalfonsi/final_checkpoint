@@ -32,19 +32,31 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
-            $user->setPassword(
-                $passwordEncoder->encodePassword(
-                    $user,
-                    $form->get('password')->getData()
-                )
-            );
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('profile', ['id' => $user->getId()]);
         }
 
         return $this->render('user/edit.html.twig', [
+            'user' => $user,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/change-profile-picture/{id}", name="avatar_edit", methods={"GET","POST"})
+     */
+    public function editAvatar(Request $request, User $user): Response
+    {
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+            return $this->redirectToRoute('profile', ['id' => $user->getId()]);
+        }
+
+        return $this->render('user/avatar_edit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);

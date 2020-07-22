@@ -6,6 +6,7 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class UserType extends AbstractType
 {
@@ -13,9 +14,13 @@ class UserType extends AbstractType
     {
         $builder
             ->add('email')
-            ->add('password')
             ->add('name')
-            ->add('avatar')
+            ->add('avatarFile', VichFileType::class, [
+                'allow_delete' => true,
+                'download_link' => false,
+                'label' => false,
+                'attr' => ['class' => 'form-control-file']
+            ])
         ;
     }
 
