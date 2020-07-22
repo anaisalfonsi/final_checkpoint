@@ -1,4 +1,3 @@
-
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -7,10 +6,16 @@
 /public/bundles/
 /var/
 /vendor/
+.idea/
+.idea/workspace.xml
+composer.lock
 ###< symfony/framework-bundle ###
-
 ###> symfony/phpunit-bridge ###
 .phpunit
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+
+### ignore migrations script in directory migrations && src/Migrations/ ###
+migrations/
+src/Migrations/
