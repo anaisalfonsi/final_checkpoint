@@ -54,6 +54,7 @@ class SecurityController extends AbstractController
                     ->to($this->getParameter('mailer_to'))
                     ->subject('Please Confirm your Email')
                     ->htmlTemplate('security/confirmation_email.html.twig')
+                    ->context(['username' => $user->getName()])
             );
             // do anything else you need here, like send an email
 

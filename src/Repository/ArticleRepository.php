@@ -19,6 +19,52 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
+    public function findAllRecent()
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->addSelect('a')
+            ->orderBy('a.published_at', 'DESC')
+            ->getQuery();
+
+        return $qb->execute();
+    }
+
+    public function findAllByAnimals()
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->select('a')
+            ->where('a.category = :identifier')
+            ->orderBy('a.published_at', 'DESC')
+            ->setParameter('identifier', 1)
+            ->getQuery();
+
+        return $qb->execute();
+    }
+
+    public function findAllByCosmos()
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->select('a')
+            ->where('a.category = :identifier')
+            ->orderBy('a.published_at', 'DESC')
+            ->setParameter('identifier', 2)
+            ->getQuery();
+
+        return $qb->execute();
+    }
+
+    public function findAllByMagic()
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->select('a')
+            ->where('a.category = :identifier')
+            ->orderBy('a.published_at', 'DESC')
+            ->setParameter('identifier', 3)
+            ->getQuery();
+
+        return $qb->execute();
+    }
+
     // /**
     //  * @return Article[] Returns an array of Article objects
     //  */
