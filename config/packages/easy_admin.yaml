@@ -1,0 +1,108 @@
+easy_admin:
+    site_name: 'Wild <b>Admin</b>'
+    formats:
+        datetime: 'd/m/yy'
+    design:
+        menu:
+            - {entity: 'Article', icon: 'sticky-note'}
+            - {entity: 'ArticleCategory', icon: 'network-wired'}
+            - {entity: 'Comment', icon: 'user'}
+            - {entity: 'User', icon: 'users'}
+    entities:
+
+        Article:
+            class: App\Entity\Article
+            label: "Articles"
+            form:
+                fields:
+                    - { property: 'title', label: 'Title ' }
+                    - { property: 'subject', label: 'Subject ' }
+                    - { property: 'content', label: 'Content ' }
+                    - { property: 'image', label: 'Image ' }
+                    - { property: 'author', label: 'Author ' }
+                    - { property: 'media_link', label: 'Media Link ' }
+                    - { property: 'category', label: 'Category ' }
+            list:
+                collapse_actions: true
+                actions: ['show', 'edit', 'delete']
+                batch_actions: ['delete']
+                fields:
+                    - { property: 'title', label: 'Title ' }
+                    - { property: 'subject', label: 'Subject ' }
+                    - { property: 'content', label: 'Content ' }
+                    - { property: 'image', label: 'Image ' }
+                    - { property: 'author', label: 'Author ' }
+                    - { property: 'media_link', label: 'Media Link ' }
+                    - { property: 'category', label: 'Category ' }
+            show:
+                fields:
+                    - { property: 'title', label: 'Title ' }
+                    - { property: 'subject', label: 'Subject ' }
+                    - { property: 'content', label: 'Content ' }
+                    - { property: 'image', label: 'Image ' }
+                    - { property: 'author', label: 'Author ' }
+                    - { property: 'media_link', label: 'Media Link ' }
+                    - { property: 'category', label: 'Category ' }
+
+        ArticleCategory:
+            class: App\Entity\ArticleCategory
+            label: "Blog Themes"
+            list:
+                collapse_actions: true
+                actions: ['show', 'edit', 'delete']
+                batch_actions: ['delete']
+                fields:
+                    - { property: 'category', label: 'Category ' }
+            show:
+                fields:
+                    - { property: 'category', label: 'Category ' }
+            form:
+                fields:
+                    - { property: 'category', label: 'Category ' }
+        Comment:
+            class: App\Entity\Comment
+            label: "User Comments"
+            form:
+                fields:
+                    - { property: 'author', label: 'User ' }
+                    - { property: 'article', label: 'Article ' }
+                    - { property: 'comment', label: 'Comment ' }
+            list:
+                collapse_actions: true
+                actions: ['show', 'edit', 'delete']
+                batch_actions: ['delete']
+                fields:
+                    - { property: 'author', label: 'User ' }
+                    - { property: 'article', label: 'Article ' }
+                    - { property: 'comment', label: 'Comment ' }
+                    - { property: 'posted_at', label: 'Posted At ' }
+                show:
+                    fields:
+                        - { property: 'author', label: 'User ' }
+                        - { property: 'article', label: 'Article ' }
+                        - { property: 'comment', label: 'Comment ' }
+                        - { property: 'posted_at', label: 'Posted At ' }
+
+        User:
+            class: App\Entity\User
+            label: "Users"
+            form:
+                fields:
+                    - name
+                    - email
+                    - password
+                    - {type: 'group', icon: 'clip', label: 'Attachments', css_class: 'col-lg-5'}
+                    - { property: 'avatarFile', type: 'vich_image' }
+            list:
+                collapse_actions: true
+                actions: ['show', 'edit', 'delete']
+                batch_actions: ['delete']
+                fields: ['name', 'email', {property: 'avatar', type: 'image', base_path: '%uploads_path%'}]
+            show:
+                fields:
+                    - { property: 'name', label: 'User Name ' }
+                    - email
+                    - {property: 'avatar', type: 'image', base_path: '%uploads_path%'}
+                    - { property: 'comments', label: 'User Comments ' }
+
+

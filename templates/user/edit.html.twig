@@ -15,7 +15,6 @@
     {% endif %}
     <button class="btn">{{ button_label|default('Save') }}</button>
     {{ form_end(form) }}
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('profile', {'id': user.id}) }}">Return to Profile</a>
 

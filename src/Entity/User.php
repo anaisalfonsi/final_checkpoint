@@ -70,6 +70,11 @@ class User implements UserInterface
      */
     private $comments;
 
+    public function __toString()
+    {
+        return $this->getEmail();
+    }
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
