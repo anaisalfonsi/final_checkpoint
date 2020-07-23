@@ -10,7 +10,6 @@ use App\Entity\User;
 use App\Entity\Article;
 use App\Entity\ArticleCategory;
 use App\Entity\Comment;
-use App\Service\Slugify;
 
 class AppFixtures extends Fixture
 {
@@ -18,7 +17,7 @@ class AppFixtures extends Fixture
 
     // ARTICLE CATEGORIES
     const CATEGORIES = [
-        'Animals',
+        'Music',
         'Cosmos',
         'Magic'
     ];
@@ -77,13 +76,10 @@ class AppFixtures extends Fixture
             $article->setSubject($faker->word);
             $article->setContent($faker->text(100));
             $article->setAuthor($faker->name);
-            $article->setImage($faker->imageUrl($width = 200, $height = 150));
+            $article->setImage('https://media.giphy.com/media/l2LoK2PEoeSLGaaZFc/giphy.gif');
             $article->setMediaLink('https://www.youtube.com/embed/EeqF6m3MqqY');
             $article->setPublishedAt($faker->dateTimeBetween($startDate = '-5 years', $endDate = 'now', $timezone = null));
             $article->setCategory($this->getReference('category_' . $faker->numberBetween(0, 2)));
-            $slugify = new Slugify();
-            $slug = $slugify->generate($article->getTitle());
-            $article->setSlug($slug);
             $manager->persist($article);
             $this->addReference('article_' . $i, $article);
         }
