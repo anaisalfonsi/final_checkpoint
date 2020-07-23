@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Edit User</h1>
+
+        {{ form_start(form) }}
+            {{ form_widget(form.email, {"attr": {"class": "d-none"} }) }}
+            {{ form_widget(form.name, {"attr": {"class": "d-none"} }) }}
+            {{ form_widget(form.avatarFile, {"attr": {"class": "form-control-file my-2"}}) }}
+        <button class="btn">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+
+    <a href="{{ path('profile', {'id': user.id}) }}">Return to Profile</a>
+
+{% endblock %}

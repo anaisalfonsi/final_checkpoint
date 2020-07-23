@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Profile{% endblock %}
-
 {% block body %}
     <h1>User</h1>
 
@@ -33,12 +31,12 @@
             </tr>
             <tr>
                 <th>Avatar</th>
-                <td><img src="{{ user.avatar }}" width="200" height="150"></td>
+                <td><img src="{{ vich_uploader_asset(user, 'avatarFile')}}" width="200" height="170"></td>
             </tr>
         </tbody>
     </table>
 
     <a href="{{ path('profile_edit', {'id': user.id}) }}">Edit Profile</a>
 
-    <a href="{{ path('profile_edit', {'id': user.id}) }}">Change Profile Picture</a>
+    <a href="{{ path('avatar_edit', {'id': user.id}) }}">Change Profile Picture</a>
 {% endblock %}
