@@ -65,14 +65,15 @@ class Article
      */
     private $comments;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $slug;
+    public function __toString()
+    {
+        return $this->title;
+    }
 
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+        $this->published_at = new \DateTime('today');
     }
 
     public function getId(): ?int
@@ -203,18 +204,6 @@ class Article
                 $comment->setArticle(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
 
         return $this;
     }

@@ -39,6 +39,11 @@ class Comment
      */
     private $posted_at;
 
+    public function __toString()
+    {
+        return $this->comment;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
