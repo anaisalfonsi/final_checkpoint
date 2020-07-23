@@ -1,11 +1,16 @@
-<h1>Hi {{ user.name }},</h1>
+{% apply inline_css(source('@email/email.css')) %}
+<div class="logo">
+    <img src="{{ email.image('@images/logo.png') }}" alt="Logo" width="100" height="100">
+</div>
+<h1>Hi <medium class="key-word">{{ user.name }}</medium>,</h1>
 
 <h3>A new Article is out, check this out!</h3>
 
-<p>
+<h4>
     <a href="{{ path('article_show_one', {'id': article.id}) }}">{{ article.title }}</a>
-</p>
+</h4>
 
-<p>
-    Cheers! 🤡🤡🤡
-</p>
+<h3>
+    See yah! 🤡🤡🤡
+</h3>
+{% endapply %}

@@ -1,13 +1,18 @@
-<h1>Hi {{ username }},</h1>
+{% apply inline_css(source('@email/email.css')) %}
+<div class="logo">
+    <img src="{{ email.image('@images/logo.png') }}" alt="Logo" width="100" height="100">
+</div>
+<h1>What'up <medium class="user-name">{{ username }}.</medium></h1>
 
-<h3>We're happy to see you join the circus !</h3>
+<h3>The World is crazy, we need to <medium class="key-word">fly high</medium> through the Cos<medium class="key-word">mos</medium>.</h3>
 
-<p>
+<h4>
     Please confirm your email address by clicking the following link: <br><br>
-    <a href="{{ signedUrl|raw }}">Confirm my Email</a>.
+    <a href="{{ signedUrl|raw }}">Confirm my Email.</a><br><br>
     This link will expire in {{ expiresAt|date('g') }} hour(s).
-</p>
+</h4>
 
-<p>
-    Cheers! 🤡🤡🤡
-</p>
+<h3>
+    See yah! 🤡🤡🤡
+</h3>
+{% endapply %}

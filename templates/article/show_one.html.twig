@@ -1,36 +1,56 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container">
-        <h1> {{ article.title }}</h1>
-            <div class="container">
-                <ul>
-                    <li>{{ article.title }}</li>
-                    <li>{{ article.subject }}</li>
-                    <li>{{ article.publishedAt|date('d F Y')}}</li>
-                    <li>{{ article.author }}</li>
-                    <li><img src="{{ article.image }}"></li>
-                    <li>{{ article.content }}</li>
-                    <li>{{ article.mediaLink }}</li>
-                    <li><a href="{{ path('articles_show_byCategory', {'slug': slug}) }}">{{ category }}</a></li>
-                </ul>
-                <div class="container">
-                    <h3>Comments:</h3><br>
-                    {% for comment in comments|reverse %}
-                        <h4>{{ comment.author.name }}</h4>
-                        <h6>{{ comment.postedAt|date('d F Y')}}</h6>
-                        <p>{{ comment.comment }}</p>
-                    {% endfor %}
-                    {% if app.user %}
-                        <div class="container">
-                            {{ form_start(form) }}
-                            {{ form_widget(form) }}
-                            <button class="btn">{{ button_label|default('Post') }}</button>
-                            {{ form_end(form) }}
-                        </div>
-                    {% endif %}
-                </div>
-                <a href="{{ path('articles_show_all') }}">Back to Blog</a>
+<div class="container-fluid mt-5">
+    <div class="row mt-5">
+        <div class="container-fluid d-flex justify-content-center flex-wrap m-5">
+            <div class="col-12 col-lg-3">
+                <h1> {{ article.title }}</h1>
             </div>
+            <div class="col-12 col-lg-1">
+                <h4 class="m-3 subject">{{ article.subject }}</h4>
+            </div>
+            <div class="col-12 col-lg-1">
+                <h6 class="m-3">{{ article.publishedAt|date('d F Y')}}</h6>
+            </div>
+            <div class="col-12 col-lg-2">
+                <h6 class="m-3">{{ article.author }}</h6>
+            </div>
+            <div class="col-12 col-lg-3">
+                <img src="{{ article.image }}" class="m-3" width="350" height="200">
+            </div>
+            <div class="col-12 col-lg-2">
+                <h5 class="m-3">{{ article.content }}</h5>
+            </div>
+        </div>
     </div>
+        <div class="container-fluid d-flex justify-content-center col-11">
+            <div class="col-12 col-md-4 container-wild">
+                <h3 class="mt-5 theme-word">Comments</h3><br>
+                {% for comment in comments|reverse %}
+                    <h5>{{ comment.author.name }}</h5>
+                    <h6>{{ comment.postedAt|date('d F Y')}}</h6>
+                    <p>{{ comment.comment }}</p>
+                {% endfor %}
+                {% if app.user %}
+                    <div class="container">
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        <div class="container d-flex justify-content-end">
+                            <button class="btn">{{ button_label|default('Post') }}</button>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="container-fluid m-5 col-12 col-md-6">
+                <a href="{{ path('articles_show_byCategory', {'slug': slug}) }}"><h3 class="theme-word">{{ category }}</h3></a>
+                <iframe src="{{ article.mediaLink }}" class="m-3" width="750" height="500" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+    <div style="height: 400px"></div>
 {% endblock %}

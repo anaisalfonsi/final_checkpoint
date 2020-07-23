@@ -24,9 +24,8 @@ class ArticleController extends AbstractController
         $articles = $articleRepository->findAllRecent();
 
         // Categories Slug
-        $categories = $articleCategoryRepository->findAll();
-        foreach ($categories as $categ) {
-            $category = $categ->getCategory();
+        foreach ($articles as $article) {
+            $category = $article->getCategory()->getCategory();
             $slug = $slugify->generate($category);
         }
         
@@ -41,7 +40,7 @@ class ArticleController extends AbstractController
      */
     public function showByCategory($slug, ArticleRepository $articleRepository)
     {
-        if ($slug === 'animals') {
+        if ($slug === 'music') {
             $articles = $articleRepository->findAllByAnimals();
         }
 

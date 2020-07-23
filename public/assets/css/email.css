@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Lato&family=Rubik&family=Work+Sans&display=swap');
+/*
+font-family: 'Didact Gothic', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Work Sans', sans-serif;
+*/
+
+:root {
+    --violet: rgba(213,175,255,1);
+    --lilac: rgba(172,101,189,1);
+    --volt: rgba(195,242,147,1);
+    --kaki: rgba(104,121,95,1);
+    --darkbrown: rgba(46,45,44,1);
+    --lightgray: rgba(245,245,245,1);
+    --gray: rgba(230,230,230,1);
+    --black: rgba(14,14,14,1);
+    --white: rgba(254,254,254,1);
+    --almostwhite: rgba(252,252,252, 1);
+    --lightviolet: rgba(246,239,255,1);
+    --lightlilac: rgba(238,224,241,1);
+    --lightkaki: rgba(224,228,223,1);
+    --lightvolt: rgba(243,252,233,1);
+}
+
+/* Elements */
+
+.user-name {
+    font-family: Rubik, sans-serif;
+    font-size: 1.1em;
+    color: var(--violet);
+}
+
+.key-word {
+    color: var(--lilac);
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Work Sans, sans-serif;
+    margin: 3%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--violet);
+}
