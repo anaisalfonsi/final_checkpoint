@@ -19,3 +19,4 @@ composer.lock
 ### ignore migrations script in directory migrations && src/Migrations/ ###
 migrations/
 src/Migrations/
+public/uploads/user_avatar/

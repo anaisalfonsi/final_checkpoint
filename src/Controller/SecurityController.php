@@ -42,6 +42,7 @@ class SecurityController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+            $user->setRoles(['ROLE_USER']);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
@@ -53,7 +54,7 @@ class SecurityController extends AbstractController
                     ->from($this->getParameter('mailer_from'))
                     ->to($this->getParameter('mailer_to'))
                     ->subject('Please Confirm your Email')
-                    ->htmlTemplate('security/confirmation_email.html.twig')
+                    ->htmlTemplate('security/email/confirmation_email.html.twig')
                     ->context(['username' => $user->getName()])
             );
             // do anything else you need here, like send an email

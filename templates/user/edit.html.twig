@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Edit User</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form.email) }}
+    {{ form_widget(form.name) }}
+    {% if user.avatar is empty %}
+        {{ form_widget(form.avatarFile, {"attr": {"class": "form-control-file my-2"}}) }}
+    {% elseif user.avatar is not empty %}
+        {% do form.avatarFile.setRendered(false) %}
+        <img src=" {{ asset('uploads/files/' ~ user.avatar) }}">
+        </div>
+    {% endif %}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('profile', {'id': user.id}) }}">Return to Profile</a>
+
+    {{ include('user/_delete_form.html.twig') }}
+{% endblock %}

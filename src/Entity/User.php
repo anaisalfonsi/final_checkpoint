@@ -8,10 +8,13 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ * @Vich\Uploadable
  */
 class User implements UserInterface
 {
@@ -49,6 +52,15 @@ class User implements UserInterface
     private $isVerified = false;
 
     /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="user_avatar", fileNameProperty="avatar")
+     *
+     * @var File
+     */
+    private $avatarFile;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $avatar;
@@ -58,9 +70,13 @@ class User implements UserInterface
      */
     private $comments;
 
+    public function __toString()
+    {
+        return $this->getEmail();
+    }
+
     public function __construct()
     {
-        $this->roles = ['ROLE_USER'];
         $this->comments = new ArrayCollection();
     }
 
@@ -166,6 +182,25 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $avatarFile
+     */
+    public function setAvatarFile(?File $avatarFile = null): void
+    {
+        $this->avatarFile = $avatarFile;
+    }
+
+    public function getAvatarFile(): ?File
+    {
+        return $this->avatarFile;
+    }
+
     public function getAvatar(): ?string
     {
         return $this->avatar;
@@ -176,6 +211,32 @@ class User implements UserInterface
         $this->avatar = $avatar;
 
         return $this;
+    }
+
+    /** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->email,
+            $this->password,
+            $this->name,
+            $this->avatar,
+
+        ));
+    }
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->email,
+            $this->password,
+            $this->name,
+            $this->avatar,
+
+            ) = unserialize($serialized);
     }
 
     /**
