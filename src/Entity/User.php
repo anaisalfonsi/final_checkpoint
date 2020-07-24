@@ -16,7 +16,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  * @Vich\Uploadable
  */
-class User implements UserInterface
+class User implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id()
@@ -62,6 +62,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
      */
     private $avatar;
 
@@ -220,9 +221,6 @@ class User implements UserInterface
             $this->id,
             $this->email,
             $this->password,
-            $this->name,
-            $this->avatar,
-
         ));
     }
 
@@ -233,9 +231,6 @@ class User implements UserInterface
             $this->id,
             $this->email,
             $this->password,
-            $this->name,
-            $this->avatar,
-
             ) = unserialize($serialized);
     }
 

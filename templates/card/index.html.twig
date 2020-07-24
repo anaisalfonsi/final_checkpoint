@@ -2,17 +2,28 @@
 
 {% block body %}
 <div class="container-fluid">
-    <h1 id="big-title" class="text-right mr-5">Astro Or Rap</h1>
+    <h1 id="big-title-card" class="text-center mr-5">Astro Or Rap</h1>
     <div class="container-fluid">
-        <div class="card-deck">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card img">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn">Go somewhere</a>
+        <div class="card-deck d-flex justify-content-center">
+            {% if random(4) == 1 %}
+            <div class="card col-12 col-md-6 col-lg-6 d-flex flex-row mt-5 oracle-card">
+                <a href="{{ path('card') }}"><img class="card-img-top" src="{{ rapperCard.image }}" width="340" height="320" alt="Card img"></a>
+                <div class="card-body col-6">
+                    <h5 class="card-title">{{rapperCard.rapper}}</h5>
+                    <p class="card-text quote-rap">{{ rapperCard.quote}}</p>
+                    <h6>Track: <strong>{{ rapperCard.track }}</strong></h6>
                 </div>
             </div>
+            {% else %}
+                <div class="card col-12 col-md-6 col-lg-6 d-flex flex-row mt-5 oracle-card">
+                    <a href="{{ path('card') }}"><img class="card-img-top" src="{{ oracleCard.image }}" width="340" height="320" alt="Card img"></a>
+                    <div class="card-body col-7">
+                        <h5 class="card-title">{{oracleCard.title}}</h5>
+                        <h6 class="quote-rap">{{ oracleCard.quote }}</h6>
+                        <p class="card-text">{{ oracleCard.interpretation}}</p>
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>
