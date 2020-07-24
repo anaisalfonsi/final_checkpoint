@@ -47,7 +47,7 @@ class AppFixtures extends Fixture
             'image' => "https://images.genius.com/8998fb21a1f3a447bc6ee84b391aa544.720x720x1.jpg"
         ],
         'Sat de la Fonky Family' => [
-            'quote' => "Y’a aussi de l’amour partout, même dans mon rap même si tu veux pas le voir",
+            'quote' => "Y’a aussi de l’amour partout, même dans mon rap même si tu veux pas le voir.",
             'track' => "Art de Rue",
             'image' => "https://images.genius.com/42b34e60e4c5f3413d6ed5bd255fe08e.400x403x1.jpg"
         ]

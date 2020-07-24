@@ -18,11 +18,22 @@ class CardController extends AbstractController
     {
         $rappers = $rapperCardRepository->findAll();
 
-        /*$randomKey = array_rand($rappers, 1);
-        $rapperCard = $rappers[$randomKey];*/
+        $randomKey = array_rand($rappers, 1);
+        $rapperCard = $rappers[$randomKey];
+
+        $oracles = $oracleCardRepository->findAll();
+
+        $randomNb = array_rand($oracles, 1);
+        $oracleCard = $oracles[$randomNb];
+
+        $cardDeck = [];
+        array_push($cardDeck, $oracleCard, $rapperCard);
+        $randomCard = array_rand($cardDeck, 1);
+        $card = $cardDeck[$randomCard];
         
         return $this->render('card/index.html.twig', [
             'rapperCard' => $rapperCard,
+            'oracleCard' => $oracleCard,
         ]);
     }
 }
