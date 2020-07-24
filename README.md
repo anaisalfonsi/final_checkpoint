@@ -31,19 +31,20 @@ In conclusion, W. is a tribute to our crazy worlds, not so far from each other.
 ### HOW TO INSTALL PROJECT
 
 commands to run:
-- git clone <project link>
-- gco -b <your new branch Name>
+- git clone "project link"
+- gco -b "your new branch Name"
 - composer update
 - php bin/console d:d:c
 - php bin/console make:migration // (make sure the migrations file is empty before)
-- php bin/console d:m:m
+- php bin/console doctrine:migrations:migrate
 - php bin/console doctrine:fixtures:load --no-interaction
 - symfony server:start -d // (so your server is running in the background, and you don't have to use a 2d terminal)
   
   >>> Go to http://localhost:8000/ in your browser.
   
-  with the fixtures, you should have all the data you need.
-  Several Users + 1 Admin access. All the access description in the fixtures file.
+  With the fixtures, you should have all the data you need.
+  Several Users + 1 Admin access. 
+  All the access descriptions are in the fixtures file.
   
   
   # BYE
