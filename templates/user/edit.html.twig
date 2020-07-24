@@ -3,7 +3,7 @@
 {% block body %}
 <div class="container-fluid">
     <div class="container-fluid col-12 col-md-8 col-lg-6">
-        <h1>Edit Profile</h1>
+        <h1 id="big-title">Edit Profile</h1>
 
         {{ form_start(form) }}
         {{ form_widget(form.email) }}
@@ -12,7 +12,7 @@
             {{ form_widget(form.avatarFile, {"attr": {"class": "form-control-file my-2"}}) }}
         {% elseif user.avatar is not empty %}
             {% do form.avatarFile.setRendered(false) %}
-            <img src=" {{ asset('uploads/files/' ~ user.avatar) }}">
+                <img src=" {{ asset('uploads/files/' ~ user.avatar) }}">
             </div>
         {% endif %}
         <button class="btn mt-5">{{ button_label|default('Save') }}</button>

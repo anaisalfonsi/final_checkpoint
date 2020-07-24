@@ -96,98 +96,23 @@ a:hover {
 }
 
 .btn:hover {
-    color: var(--violet);
+    background-color: var(--black);
     border-color: var(--violet);
-    font-size: 1.05em;
+    color: var(--white);
 }
 
-.subject {
-    font-style: italic;
+.delete-btn {
+    color: var(--white);
 }
 
-.theme-word {
-    color: var(--kaki);
+/* Admin */
+
+.main-sidebar {
+    background-color: rgba(255,159,127,0);
 }
 
-.card {
-    border-style: none;
-}
-.card-body {
-    background-color: var(--lightviolet);
-}
-.card-footer {
-    border-style: none;
-    background-color: var(--lightlilac);
-}
-
-.container-wild {
-    background-color: var(--almostwhite);
-}
-
-/* Navbar */
-
-.custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,159,127,0.6)' stroke-width='4' stroke-linecap='straight' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-.custom-toggler {
-    border-color: rgba(255,159,127,0.2);
-    border-width: 2px;
-}
-
-/* Home */
-
-.subtitle {
-    font-style: italic;
-    color: var(--kaki);
-}
-
-/* Login and Register */
-
-.login-container {
-    background-image: url("https://media.giphy.com/media/1SxwKW4xudUqK6hBYY/giphy.gif");
-    height: 540px;
-}
-
-.gif-word {
-    font-family: Rubik;
-    color: var(--lightvolt);
-    letter-spacing: 2px;
-    background-color: black;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 3%;
-    padding-right: 3%;
-}
-
-.register-container {
-    background-image: url("https://media3.giphy.com/media/7J4WIQP8r873eQ5jwv/giphy.gif");
-    height: 800px;
-}
-
-.register-box {
-    background-color: rgba(14,14,14,1);
-    height: 800px;
-}
-
-.register-word {
-    color: var(--volt);
-}
-.register-form {
-    color: var(--almostwhite);
-}
-
-/* Card */
-
-#big-title-card {
-    font-family: BrokenPlanez;
-    font-size: 7em;
+#admin-brand {
     color: var(--lilac);
-}
-
-.oracle-card {
-    background-color: var(--volt);
-}
-
-.quote-rap {
-    font-style: italic;
+    font-family: "Broken Planewing";
+    font-size: 3em;
 }

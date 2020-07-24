@@ -73,6 +73,6 @@ class UserController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('profile', ['id' => $user->getId()]);
+        return $this->redirectToRoute('home');
     }
 }

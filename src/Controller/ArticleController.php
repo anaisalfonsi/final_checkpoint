@@ -65,7 +65,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/article/{id}", name="article_show_one")
      */
-    public function showArticle($id, ArticleRepository $articleRepository, Comment $comment, Slugify $slugify, Request $request)
+    public function showArticle($id, ArticleRepository $articleRepository, Slugify $slugify, Request $request)
     {
         $article = $articleRepository->findOneBy(['id' => $id]);
         $category = $article->getCategory()->getCategory();
