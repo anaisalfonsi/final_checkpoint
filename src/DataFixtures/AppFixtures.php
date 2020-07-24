@@ -29,7 +29,7 @@ class AppFixtures extends Fixture
         'Kota The Friend' => [
             'quote' => "Don't wanna love if it ain't right.",
             'track' => "Long Beach",
-            'image' => "https://lh3.googleusercontent.com/proxy/FYiPdCgwSdUlgAFOerqqXoUmzmbfKw3IYI15V_Je543kYGPnPmO5go1UyVg0VGlcfZZempTbZCf5x4jsi1o-Yq6faFGBPUFOj4WmmnA-XMhozqtoGRfrkd0KQaC2u2_e-oWl8Q8"
+            'image' => "https://lh3.googleusercontent.com/proxy/T8HEXI6BStlMhpiVa8Qgz2BRz48ctQ0QVQIpQ0jhIUnQPenI_5tLJGE67uPgrQPx7AXTor43xOMe_GkQ6NHyS79Eb8H6___BjBe1D8CqbXlcWKlptRYRbg1uBg9lbzdjPpMzMyc"
         ],
         'J.I.D' => [
             'quote' => "But when I'm good, I'm good, when I'm bad, I'm better.",
