@@ -15,6 +15,7 @@ In conclusion, W. is a tribute to our crazy worlds, not so far from each other.
 
 # What you can do on this web app:
 
+AS AN USER:
 - Login/Logout
 - Register
 - Access blog once you're logged in.
@@ -24,6 +25,10 @@ In conclusion, W. is a tribute to our crazy worlds, not so far from each other.
 - See comments from other users on each article and comment
 - Be alerted when a new Article has been posted
 - Have an tarot reading online, with random rapper messages ^^
+
+AS AN ADMIN :
+- CRUD ARTICLE, USER, BLOG THEMES
+- Moderation on User comments (update, delete)
 
 # Later on:
 - Music Player
