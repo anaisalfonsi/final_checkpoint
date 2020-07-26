@@ -7,14 +7,14 @@
     </div>
     <div class="row justify-content-center">
     {% for article in articles %}
-        <div class="card-group d-flex justify-content-center col-12">
-            <div class="card d-flex flex-row-reverse m-5">
-                <img src="{{ article.image }}">
+        <div class="card-group d-flex justify-content-center col-12 mb-5">
+            <div class="card m-5 all-articles-card">
+                <img class="img-fluid" src="{{ article.image }}">
                 <div class="card-body">
-                    <h3 class="card-title">{{ article.title }}</h3>
-                    <h5 class="subject">{{ article.subject }}</h5>
-                    <h5>{{ article.author }}</h5>
-                    <h5 class="theme-word">{{ article.category.category }}</h5>
+                    <h3 class="card-title card-fonts">{{ article.title }}</h3>
+                    <h5 class="subject card-fonts">{{ article.subject }}</h5>
+                    <h5 class="card-fonts">{{ article.author }}</h5>
+                    <h5 class="theme-word card-fonts">{{ article.category.category }}</h5>
                     <div class="card-footer">
                         <a href="{{ path('article_show_one', {'id': article.id}) }}" class="btn">See More</a>
                     </div>
@@ -24,5 +24,5 @@
     {% endfor %}
     </div>
 </div>
-    <div style="height: 400px"></div>
+    <div class="white-space" style="height: 400px"></div>
 {% endblock %}

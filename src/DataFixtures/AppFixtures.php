@@ -29,7 +29,7 @@ class AppFixtures extends Fixture
         'Kota The Friend' => [
             'quote' => "Don't wanna love if it ain't right.",
             'track' => "Long Beach",
-            'image' => "https://lh3.googleusercontent.com/proxy/T8HEXI6BStlMhpiVa8Qgz2BRz48ctQ0QVQIpQ0jhIUnQPenI_5tLJGE67uPgrQPx7AXTor43xOMe_GkQ6NHyS79Eb8H6___BjBe1D8CqbXlcWKlptRYRbg1uBg9lbzdjPpMzMyc"
+            'image' => "https://files.lylo.fr/article/5bc616976c6f6341d4fe9100/contest_kota-the-friend_-1.jpg"
         ],
         'J.I.D' => [
             'quote' => "But when I'm good, I'm good, when I'm bad, I'm better.",
@@ -105,7 +105,7 @@ class AppFixtures extends Fixture
             $article = new Article();
             $article->setTitle($faker->sentence);
             $article->setSubject($faker->word);
-            $article->setContent($faker->text(100));
+            $article->setContent($faker->text(200));
             $article->setAuthor($faker->name);
             $article->setImage('https://media.giphy.com/media/l2LoK2PEoeSLGaaZFc/giphy.gif');
             $article->setMediaLink('https://www.youtube.com/embed/EeqF6m3MqqY');
