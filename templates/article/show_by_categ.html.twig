@@ -1,25 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container-fluid d-flex justify-content-center flex-wrap mt-3">
-        <div class="container-fluid d-flex justify-content-end mr-5">
-            <h1 id="big-title" class="mr-5 mb-3"> {{ category }}</h1>
-        </div>
-        <div class="container-fluid py-3">
-            <div class="row justify-content-center">
+<div class="div-container-fluid">
+    <div class="container-fluid d-flex justify-content-end mt-3 mr-5">
+        <h1 id="big-title" class="mr-5 mb-3"> {{ category }}</h1>
+    </div>
+        <div class="container-fluid py-3 themed-articles-box">
+            <div class="row justify-content-center themed-articles-row">
             {% for article in articles %}
-                <div class="m-5 col-12 col-md-4">
+                <div class="m-5 col-12 col-lg-4">
                     <h3>{{ article.title }}</h3>
                     <h5 class="subject">{{ article.subject }}</h5>
                     <h5>{{ article.author }}</h5>
-                    <img src="{{ article.image }}" width="400" height="250">
-                    <div class="container-fluid mt-3">
+                    <img class="img-fluid mt-2" src="{{ article.image }}" width="400" height="250">
+                    <div class="container-fluid themed-articles-btn">
                         <a href="{{ path('article_show_one', {'id': article.id}) }}" class="btn">See More</a>
                     </div>
                 </div>
             {% endfor %}
             </div>
         </div>
-    </div>
-    <div style="height: 400px"></div>
+</div>
+    <div class="white-space" style="height: 400px"></div>
 {% endblock %}

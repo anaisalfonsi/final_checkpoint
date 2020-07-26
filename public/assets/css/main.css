@@ -46,6 +46,7 @@ body {
 }
 
 /* Elements */
+
 .container {
     background-color: var(--almostwhite);
     padding-top: 5%;
@@ -101,12 +102,20 @@ a:hover {
     font-size: 1.05em;
 }
 
+.white-space {
+    height: 400px;
+}
+
 .subject {
     font-style: italic;
 }
 
 .theme-word {
     color: var(--kaki);
+}
+.theme-word:hover {
+    color: var(--lilac);
+    padding-left: 10%;
 }
 
 .card {
@@ -136,6 +145,9 @@ a:hover {
 
 /* Home */
 
+.home-img {
+    height: 95%;
+}
 .subtitle {
     font-style: italic;
     color: var(--kaki);
@@ -176,7 +188,60 @@ a:hover {
     color: var(--almostwhite);
 }
 
-/* Card */
+/* All Articles */
+
+.all-articles-card {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 90%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-footer {
+    bottom: 5%;
+    margin-top: 3%;
+    position: absolute;
+}
+
+/* Themed Articles */
+
+.themed-articles-btn {
+    margin-top: 4%;
+}
+
+/* One Article */
+
+#one-article-big-title {
+    font-family: BrokenPlanez;
+    font-size: 5em;
+    color: var(--violet);
+}
+
+.one-article-media-comments-box {
+    display: flex;
+    justify-content: center;
+}
+
+.one-article-video-box {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.container-wild {
+    margin-top: 7%;
+}
+
+.comment-title {
+    color: var(--kaki);
+    font-family: "Broken Planewing";
+    font-size: 4.5em;
+}
+
+/* Oracle Cards */
 
 #big-title-card {
     font-family: BrokenPlanez;
@@ -184,10 +249,219 @@ a:hover {
     color: var(--lilac);
 }
 
+.oracle-h3 {
+    align-self: center;
+    color: var(--kaki);
+    font-style: italic;
+}
+
+.oracle-emojis {
+    font-style: normal;
+}
+
 .oracle-card {
     background-color: var(--volt);
+    display: flex;
+    flex-direction: row;
+    margin-top: 4%;
+}
+
+.oracle-card-body {
+    padding-top: 10%;
 }
 
 .quote-rap {
     font-style: italic;
+}
+
+/* Responsive */
+
+/* r-elements */
+
+@media screen and (max-width: 990px) {
+    .theme-word {
+        font-size: 1.5em;
+    }
+    .white-space {
+        height: 150px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .theme-word {
+        font-size: 1.3em;
+    }
+    .white-space {
+        height: 50px;
+    }
+}
+
+/* r-home */
+
+@media screen and (max-width: 1280px) {
+}
+@media screen and (max-width: 1150px) {
+    #big-title {
+        font-size: 8em;
+    }
+    .home-container {
+        margin-top: 6%;
+    }
+}
+@media screen and (max-width: 990px) {
+    .home-img {
+        height: 90%;
+    }
+}
+@media screen and (max-width: 870px) {
+    .home-img {
+        height: 80%;
+    }
+}
+@media screen and (max-width: 800px) {
+    #big-title {
+        font-size: 6em;
+    }
+    .home-img {
+        height: 70%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .home-img {
+        height: 60%;
+    }
+    .subtitle {
+        font-size: 1.5em;
+    }
+    .home-container {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 690px) {
+    .home-img {
+        height: 50%;
+    }
+}
+@media screen and (max-width: 500px) {
+    #big-title {
+        font-size: 4.5em;
+        justify-content: flex-start;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 10%;
+    }
+    .home-img {
+        height: 45%;
+    }
+    .subtitle {
+        font-size: 1.2em;
+        margin-bottom: 10%;
+    }
+}
+@media screen and (max-width: 436px) {
+    #big-title {
+        font-size: 4.3em;
+        justify-content: flex-start;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 10%;
+    }
+    .home-img {
+        height: 40%;
+    }
+    .subtitle {
+        font-size: 1.1em;
+        margin-bottom: 10%;
+    }
+}
+@media screen and (max-width: 380px) {
+    #big-title {
+        font-size: 3.5em;
+        justify-content: flex-start;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 10%;
+    }
+    .home-img {
+        height: 35%;
+    }
+    .subtitle {
+        font-size: 1em;
+        margin-bottom: 10%;
+    }
+}
+
+/* r-all-articles */
+
+@media screen and (max-width: 1150px) {
+    .card-fonts {
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 990px) {
+    .all-articles-card {
+        flex-direction: column;
+        height: 100%;
+    }
+    .card-footer {
+
+    }
+}
+@media screen and (max-width: 500px) {
+    .all-articles-card {
+    }
+}
+
+/* r-themed-articles */
+
+@media screen and (max-width: 990px) {
+    .themed-articles-row {
+        margin-left: 10%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .themed-articles-row {
+        margin-left: 0%;
+        margin-right: 2%;
+    }
+    .themed-articles-btn {
+        margin-top: 7%;
+    }
+}
+
+/* r-one-article */
+
+@media screen and (max-width: 990px) {
+    .comment-title {
+        font-size: 3.7em;
+    }
+    #one-article-big-title {
+        font-size: 4.4em;
+    }
+}
+@media screen and (max-width: 500px) {
+    .comment-title {
+        font-size: 2.7em;
+    }
+    #one-article-big-title {
+        font-size: 4em;
+    }
+}
+
+/* r-oracle-cards */
+
+@media screen and (max-width: 990px) {
+    .oracle-card {
+        margin-top: 10%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .oracle-card {
+        flex-direction: column;
+        margin-top: 15%;
+    }
+    .oracle-card-body {
+        padding-top: 10%;
+        padding-bottom: 17%;
+    }
 }
