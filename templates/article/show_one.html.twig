@@ -1,13 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container-fluid mt-5">
-    <div class="row mt-5">
+<div class="container col-12 mt-5">
+    <div class="row">
+        <h1 id="one-article-big-title">{{ article.title }}</h1>
         <div class="container-fluid d-flex justify-content-center flex-wrap m-5">
             <div class="col-12 col-lg-3">
-                <h1> {{ article.title }}</h1>
+                <h3> {{ article.title }}</h3>
             </div>
-            <div class="col-12 col-lg-1">
+            <div class="col-12 col-lg-2">
                 <h4 class="m-3 subject">{{ article.subject }}</h4>
             </div>
             <div class="col-12 col-lg-1">
@@ -16,41 +17,39 @@
             <div class="col-12 col-lg-2">
                 <h6 class="m-3">{{ article.author }}</h6>
             </div>
-            <div class="col-12 col-lg-3">
-                <img src="{{ article.image }}" class="m-3" width="350" height="200">
+            <div class="col-12 col-lg-4">
+                <img src="{{ article.image }}" class="img-fluid m-3">
             </div>
-            <div class="col-12 col-lg-2">
-                <h5 class="m-3">{{ article.content }}</h5>
-            </div>
-        </div>
-    </div>
-        <div class="container-fluid d-flex justify-content-center col-11">
-            <div class="col-12 col-md-4 container-wild">
-                <h3 class="mt-5 theme-word">Comments</h3><br>
-                {% for comment in comments|reverse %}
-                    <h5>{{ comment.author.name }}</h5>
-                    <h6>{{ comment.postedAt|date('d F Y')}}</h6>
-                    <p>{{ comment.comment }}</p>
-                {% endfor %}
-                {% if app.user %}
-                    <div class="container">
-                        {{ form_start(form) }}
-                        {{ form_widget(form) }}
-                        <div class="container d-flex justify-content-end">
-                            <button class="btn">{{ button_label|default('Post') }}</button>
-                        </div>
-                        {{ form_end(form) }}
-                    </div>
-                {% endif %}
-            </div>
-            <div class="container-fluid m-5 col-12 col-md-6">
-                <a href="{{ path('articles_show_byCategory', {'slug': slug}) }}"><h3 class="theme-word">{{ category }}</h3></a>
-                <iframe src="{{ article.mediaLink }}" class="m-3" width="750" height="500" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+            <div class="col-12">
+                <h5 class="mt-5">{{ article.content }}</h5>
             </div>
         </div>
+        <a href="{{ path('articles_show_byCategory', {'slug': slug}) }}"><h3 class="ml-5 theme-word">#{{ category }}</h3></a>
     </div>
 </div>
-    <div style="height: 400px"></div>
+<div class="container-fluid embed-responsive embed-responsive-16by9 col-10 col-lg-5 one-article-video-box">
+    <iframe src="{{ article.mediaLink }}" class="embed-responsive-item my-3" frameborder="0" allow="accelerometer;
+    autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+    <div class="container-fluid col-12 px-4 container-wild">
+        <div class="container">
+            <h3 class="comment-title">Comments</h3><br>
+            {% for comment in comments|reverse %}
+                <h5>{{ comment.author.name }}</h5>
+                <h6>{{ comment.postedAt|date('d F Y')}}</h6>
+                <p>{{ comment.comment }}</p>
+            {% endfor %}
+            {% if app.user %}
+                <div class="container">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <div class="container d-flex justify-content-end">
+                        <button class="btn">{{ button_label|default('Post') }}</button>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="white-space" style="height: 400px"></div>
 {% endblock %}
