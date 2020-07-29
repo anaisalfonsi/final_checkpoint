@@ -11,14 +11,14 @@
             {{ form_widget(form.avatarFile, {"attr": {"class": "form-control-file my-2"}}) }}
         {% elseif user.avatar is not empty %}
             {% do form.avatarFile.setRendered(false) %}
-                <img src=" {{ asset('uploads/files/' ~ user.avatar) }}">
-            </div>
+                <img src=" {{ asset('uploads/user_avatar/' ~ user.avatar) }}">
         {% endif %}
-        <button class="btn mt-5">{{ button_label|default('Save') }}</button>
-        {{ form_end(form) }}
-
-        {{ include('user/_delete_form.html.twig') }}
-        <a href="{{ path('profile', {'id': user.id}) }}">Return to Profile</a>
+        <div class="col-12">
+            <button class="btn mt-5">{{ button_label|default('Save') }}</button>
+            {{ form_end(form) }}
+            {{ include('user/_delete_form.html.twig') }}
+            <a href="{{ path('profile', {'id': user.id}) }}">Return to Profile</a>
+        </div>
     </div>
 </div>
     <div class="white-space"></div>

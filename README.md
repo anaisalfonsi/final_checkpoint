@@ -5,30 +5,30 @@ Welcome! ^^
 User Stories, Wireframes, and CMD Here >>> https://miro.com/app/board/o9J_kozA1bQ=/
 
 
-# W. is a blog /oracle card reading based on Travis Scott Artist Universe. 
+# W. is a blog/oracle card reading based on Travis Scott Universe. 
 
-To me, he's the only one that makes a circus "sexy". Also we share a lot of common interests : like eclectic music, astrology, strong colors, bling bling and we both have deep fascination for the cosmos.
+To me, he's the only artist that has made the idea of a circus "sexy". Also we share a lot of common interests : like eclectic music, astrology, strong colors, bling bling and we both have deep fascination for the cosmos.
 Also, Travis has a lot of awesome gifs and photos. Which are really fun to work with.
 
 In conclusion, W. is a tribute to our crazy worlds, not so far from each other. 
 
 
-# What you can do on this web app:
+# What you can do with this web app:
 
 AS AN USER:
 - Login/Logout
 - Register
-- Access blog once you're logged in.
+- Access blog once you're logged in
 - See the articles' blog ordered by publication date from the most recent
-- See the articles by Themes : Music, Cosmos, Magic
-- See an article with media links.
-- See comments from other users on each article and comment
-- Be alerted when a new Article has been posted
-- Have an tarot reading online, with random rapper messages ^^
+- See the articles by Themes: Music, Cosmos, Magic
+- See an article with media links
+- See comments from other users on each article + comment
+- Be alerted when a new article has been posted
+- Have a tarot reading online, with random rapper messages ^^
 
-AS AN ADMIN :
+AS AN ADMIN:
 - CRUD ARTICLE, USER, BLOG THEMES
-- Moderation on User comments (update, delete)
+- Moderation on users comments (update, delete)
 
 # Later on:
 - Music Player
@@ -40,10 +40,10 @@ commands to run:
 - gco -b "your new branch Name"
 - composer update
 - php bin/console d:d:c
-- php bin/console make:migration // (make sure the migrations file is empty before)
+- php bin/console make:migration
 - php bin/console doctrine:migrations:migrate
 - php bin/console doctrine:fixtures:load --no-interaction
-- symfony server:start -d // (so your server is running in the background, and you don't have to use a 2d terminal)
+- symfony server:start -d // (so your server is running in the background, and you don't have to use an additional terminal)
   
   >>> Go to http://localhost:8000/ in your browser.
   
@@ -54,5 +54,5 @@ commands to run:
   
   # BYE
   
-  I think that's it ! Hope you'll enjoy :)
+  I think that's it! Hope you'll enjoy :)
 
