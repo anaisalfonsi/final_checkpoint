@@ -23,5 +23,5 @@ migrations/
 ### ignore migrations script in directory migrations && src/Migrations/ ###
 
 ### ignore files uploaded from vich upload ###
-public/uploads/user_avatar/
+/public/uploads/user_avatar/
 ### ignore files uploaded from vich upload ###
