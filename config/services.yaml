@@ -6,7 +6,7 @@
 parameters:
     mailer_to: '%env(resolve:MAILER_TO_ADDRESS)%'
     mailer_from: '%env(resolve:MAILER_FROM_ADDRESS)%'
-    uploads_path: '/uploads/files/'
+    uploads_path: '/uploads/user_avatar/'
 
 services:
     # default configuration for services in *this* file
