@@ -18,5 +18,10 @@ composer.lock
 
 ### ignore migrations script in directory migrations && src/Migrations/ ###
 /migrations/
+migrations
 /src/Migrations/
+### ignore migrations script in directory migrations && src/Migrations/ ###
+
+### ignore files uploaded from vich upload ###
 public/uploads/user_avatar/
+### ignore files uploaded from vich upload ###
