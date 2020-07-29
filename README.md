@@ -40,7 +40,7 @@ commands to run:
 - gco -b "your new branch Name"
 - composer update
 - php bin/console d:d:c
-- php bin/console make:migration
+- php bin/console make:migration (!!! Before making a new migration, make sure the migrations file is empty. Otherwise, delete all the migrations.)
 - php bin/console doctrine:migrations:migrate
 - php bin/console doctrine:fixtures:load --no-interaction
 - symfony server:start -d // (so your server is running in the background, and you don't have to use an additional terminal)
