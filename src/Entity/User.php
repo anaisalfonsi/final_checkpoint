@@ -47,11 +47,6 @@ class User implements UserInterface, \Serializable
     private $name;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private $isVerified = false;
-
-    /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
      * @Vich\UploadableField(mapping="user_avatar", fileNameProperty="avatar")
@@ -65,6 +60,11 @@ class User implements UserInterface, \Serializable
      * @var string
      */
     private $avatar;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
 
     /**
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="author")
@@ -171,18 +171,6 @@ class User implements UserInterface, \Serializable
         return $this;
     }
 
-    public function isVerified(): bool
-    {
-        return $this->isVerified;
-    }
-
-    public function setIsVerified(bool $isVerified): self
-    {
-        $this->isVerified = $isVerified;
-
-        return $this;
-    }
-
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the update. If this
@@ -221,6 +209,7 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->email,
             $this->password,
+            $this->avatar
         ));
     }
 
@@ -231,7 +220,20 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->email,
             $this->password,
+            $this->avatar
             ) = unserialize($serialized);
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
     }
 
     /**

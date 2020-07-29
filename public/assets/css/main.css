@@ -160,7 +160,7 @@ a:hover {
     height: 540px;
 }
 
-.gif-word {
+.login-on-gif-text {
     font-family: Rubik;
     color: var(--lightvolt);
     letter-spacing: 2px;
@@ -184,6 +184,7 @@ a:hover {
 .register-word {
     color: var(--volt);
 }
+
 .register-form {
     color: var(--almostwhite);
 }

@@ -8,35 +8,31 @@
         {% endif %}
 
         {% if app.user %}
-            <div class="mb-3">
-                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            <div class="mb-3 login-on-gif-text">
+                You are logged in as {{ app.user.username }}, <a class="text-danger" href="{{ path('app_logout') }}">Logout</a>
             </div>
         {% endif %}
 
-        <h1 class="mb-5 gif-word">Please sign in</h1>
-        <label for="inputEmail" class="mt-3 gif-word">Email</label>
+        <h1 class="mb-5 login-on-gif-text">Sign in</h1>
+        <label for="inputEmail" class="mt-3 login-on-gif-text">Email</label>
         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-        <label for="inputPassword" class="gif-word mt-4">Password</label>
+        <label for="inputPassword" class="mt-4 login-on-gif-text">Password</label>
         <input type="password" name="password" id="inputPassword" class="form-control" required>
 
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-        {#
-            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-            See https://symfony.com/doc/current/security/remember_me.html
+        <div class="checkbox mt-3">
+            <label class="login-on-gif-text">
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
 
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" name="_remember_me"> Remember me
-                </label>
-            </div>
-        #}
-        <div class="col-12 d-flex justify-content-end mt-5">
+        <div class="col-12 d-flex justify-content-end">
             <button class="btn" type="submit">
                 Sign in
             </button>
         </div>
     </form>
 </div>
-    <div class="white-space" style="height: 400px"></div>
+    <div class="white-space"></div>
 {% endblock %}
