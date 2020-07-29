@@ -25,6 +25,7 @@ AS AN USER:
 - See comments from other users on each article + comment
 - Be alerted when a new article has been posted
 - Have a tarot reading online, with random rapper messages ^^
+- Whether you're logged in or not, contact the W. team about any subject
 
 AS AN ADMIN:
 - CRUD ARTICLE, USER, BLOG THEMES
