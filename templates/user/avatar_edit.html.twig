@@ -6,31 +6,10 @@
         {{ form_start(form) }}
             {{ form_widget(form.email, {"attr": {"class": "d-none"} }) }}
             {{ form_widget(form.name, {"attr": {"class": "d-none"} }) }}
-            {{ form_widget(form.avatarFile, {"attr": {"class": "form-control-file my-2 js-input-avatar"}}) }}
+            {{ form_widget(form.avatarFile, {"attr": {"class": "form-control-file my-2"}}) }}
         <button class="btn my-5">{{ button_label|default('Save') }}</button>
         {{ form_end(form) }}
             <a href="{{ path('profile', {'id': user.id}) }}">Return to Profile</a>
         </div>
-    <div class="white-space" style="height: 400px"></div>
-{% endblock %}
-{% block javascripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script>
-        document.querySelector('div.checkbox').classList.add('d-none');
-        document.querySelector('#user_avatarFile_delete').checked = true;
-        var inputAvatar = document.querySelector('#user_avatarFile_file');
-        inputAvatar.addEventListener('change', e => {
-            console.log(e.target.files[0].name)
-            readURL(inputAvatar)
-        })
-        readURL = (input) =>  {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#blah').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]); // convert to base64 string
-            }
-        }
-    </script>
+    <div class="white-space"></div>
 {% endblock %}
