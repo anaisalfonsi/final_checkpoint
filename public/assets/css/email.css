@@ -46,3 +46,8 @@ a {
     text-decoration: none;
     color: rgba(213,175,255,1);
 }
+
+.subject {
+    color: rgba(104,121,95,1);
+    font-style: italic;
+}
