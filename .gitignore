@@ -18,7 +18,7 @@ composer.lock
 
 ### ignore migrations script in directory migrations && src/Migrations/ ###
 /migrations/
-migrations
+migrations/
 /src/Migrations/
 ### ignore migrations script in directory migrations && src/Migrations/ ###
 
