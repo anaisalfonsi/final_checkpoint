@@ -8,7 +8,7 @@ User Stories, Wireframes, and CMD Here >>> https://miro.com/app/board/o9J_kozA1b
 # W. is a blog/oracle card reading based on Travis Scott Universe. 
 
 To me, he's the only artist that has made the idea of a circus "sexy". Also we share a lot of common interests : like eclectic music, astrology, strong colors, bling bling and we both have deep fascination for the cosmos.
-Also, Travis has a lot of awesome gifs and photos. Which are really fun to work with.
+Also, Travis has a lot of awesome gifs and photos. Which I find very fun to work with.
 
 In conclusion, W. is a tribute to our crazy worlds, not so far from each other. 
 
@@ -25,6 +25,7 @@ AS AN USER:
 - See comments from other users on each article + comment
 - Be alerted when a new article has been posted
 - Have a tarot reading online, with random rapper messages ^^
+- Whether you're logged in or not, contact the W. team about any subject
 
 AS AN ADMIN:
 - CRUD ARTICLE, USER, BLOG THEMES
@@ -40,7 +41,7 @@ commands to run:
 - gco -b "your new branch Name"
 - composer update
 - php bin/console d:d:c
-- php bin/console make:migration
+- php bin/console make:migration (!!! Before making a new migration, make sure the migrations file is empty. Otherwise, delete all the migrations.)
 - php bin/console doctrine:migrations:migrate
 - php bin/console doctrine:fixtures:load --no-interaction
 - symfony server:start -d // (so your server is running in the background, and you don't have to use an additional terminal)

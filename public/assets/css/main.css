@@ -22,7 +22,7 @@ font-family: 'Work Sans', sans-serif;
     --gray: rgba(230,230,230,1);
     --black: rgba(14,14,14,1);
     --white: rgba(254,254,254,1);
-    --almostwhite: rgba(252,252,252, 1);
+    --almostwhite: rgba(252,252,252,1);
     --lightviolet: rgba(246,239,255,1);
     --lightlilac: rgba(238,224,241,1);
     --lightkaki: rgba(224,228,223,1);
@@ -57,7 +57,7 @@ body {
 
 #big-title {
     font-family: BrokenPlanez;
-    font-size: 10em;
+    font-size: 8em;
     color: var(--violet);
 }
 
@@ -70,8 +70,8 @@ h1 {
 }
 
 p {
-    font-family: Didact Gothic;
     color: var(--black);
+    font-family: Didact Gothic;
 }
 
 ul, li {
@@ -362,10 +362,6 @@ a:hover {
 @media screen and (max-width: 436px) {
     #big-title {
         font-size: 4.3em;
-        justify-content: flex-start;
-        margin-right: 0;
-        margin-left: 0;
-        margin-bottom: 10%;
     }
     .home-img {
         height: 40%;
@@ -378,10 +374,6 @@ a:hover {
 @media screen and (max-width: 380px) {
     #big-title {
         font-size: 3.5em;
-        justify-content: flex-start;
-        margin-right: 0;
-        margin-left: 0;
-        margin-bottom: 10%;
     }
     .home-img {
         height: 35%;
