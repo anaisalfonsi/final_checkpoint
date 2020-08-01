@@ -8,7 +8,7 @@ User Stories, Wireframes, and CMD Here >>> https://miro.com/app/board/o9J_kozA1b
 # W. is a blog/oracle card reading based on Travis Scott Universe. 
 
 To me, he's the only artist that has made the idea of a circus "sexy". Also we share a lot of common interests : like eclectic music, astrology, strong colors, bling bling and we both have deep fascination for the cosmos.
-Also, Travis has a lot of awesome gifs and photos. Which are really fun to work with.
+Also, Travis has a lot of awesome gifs and photos. Which I find very fun to work with.
 
 In conclusion, W. is a tribute to our crazy worlds, not so far from each other. 
 

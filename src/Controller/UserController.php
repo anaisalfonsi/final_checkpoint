@@ -31,6 +31,10 @@ class UserController extends AbstractController
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
+        // si post email alors setEmail
+        // si post name alors setName
+        // si post avatar alors setAvatar
+
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 

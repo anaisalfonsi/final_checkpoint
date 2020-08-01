@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('assets/css/trippin.css')}}">
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid mt-3 home-main">
+        <div class="container-fluid d-flex justify-content-end mr-5 home-container">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-7 image-container">
+                <img src="https://storage.googleapis.com/stateless-campfire-pictures/2020/05/9337f6d0-cacaec-15886149344lc8p.gif"
+                     class="">
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-5">
+                <h1 id="big-title" class="ml-5">Trippin'</h1>
+                <h3 class="subtitle">Inside that trippin' brain</h3>
+            </div>
+        </div>
+        <div class="container-fluid d-flex justify-content-end mr-5">
+        </div>
+    </div>
+    <div class="white-space"></div>
+{% endblock %}

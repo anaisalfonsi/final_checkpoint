@@ -25,11 +25,6 @@ class CardController extends AbstractController
 
         $randomNb = array_rand($oracles, 1);
         $oracleCard = $oracles[$randomNb];
-
-        $cardDeck = [];
-        array_push($cardDeck, $oracleCard, $rapperCard);
-        $randomCard = array_rand($cardDeck, 1);
-        $card = $cardDeck[$randomCard];
         
         return $this->render('card/index.html.twig', [
             'rapperCard' => $rapperCard,
