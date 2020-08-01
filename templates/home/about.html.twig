@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('assets/css/about.css')}}">
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid pt-3 px-5 about-main">
+        <div class="container-fluid about-container">
+            <div class="col-12 col-lg-7 about-text-container">
+                <h1 id="big-title" class="ml-5">About W.</h1>
+
+                <h3 class="ml-5 p-3 subtitle">W. is a blog, tarot card reading, <br>based on Travis Scott Universe.</h3>
+
+                <p class="about-p">To me, he's the only artist that has made the idea of a circus "sexy". <br>
+                    Also we share a lot of common interests : like eclectic music, astrology, strong colors, bling bling and we both have deep fascination for the cosmos.
+                    Also, Travis has a lot of awesome gifs and photos. Which I find very fun to work with.
+                    <br><br>
+                    In conclusion, W. is a tribute to our crazy worlds, not so far from each other.</p>
+            </div>
+        </div>
+        <div class="white-space"></div>
+    </div>
+{% endblock %}

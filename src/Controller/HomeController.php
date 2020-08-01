@@ -23,6 +23,46 @@ class HomeController extends AbstractController
     }
 
     /**
+     * @Route("/about", name="about")
+     */
+    public function about()
+    {
+        return $this->render('home/about.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
+     * @Route("/travis", name="travis")
+     */
+    public function travis()
+    {
+        return $this->render('home/travis.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
+     * @Route("/trippin", name="trippin")
+     */
+    public function trippin()
+    {
+        return $this->render('home/trippin.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
+     * @Route("/faq", name="faq")
+     */
+    public function faq()
+    {
+        return $this->render('home/faq.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
      * @Route("/contact", name="contact", methods={"GET","POST"})
      */
     public function contact(ContactEmail $contactEmail): Response
