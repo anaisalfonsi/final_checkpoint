@@ -19,6 +19,10 @@
             </div>
             <div class="col-12 col-lg-4">
                 <img src="{{ article.image }}" class="img-fluid m-3">
+                {% if app.user %}
+                    <i id="watchlist" class="{{ app.user.isInWatchlist(article) ? 'fas' : 'far' }} fa-heart watchlist"
+                       data-href="{{path('article_watchlist', {'id': article.id})}}"></i>
+                {% endif %}
             </div>
             <div class="col-12">
                 <h5 class="mt-5">{{ article.content }}</h5>
@@ -52,4 +56,23 @@
         </div>
     </div>
     <div class="white-space"></div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        document.querySelector("#watchlist").addEventListener('click', addToWatchlist);
+        function addToWatchlist(event) {
+            let watchlistIcon = event.target;
+            let link = watchlistIcon.dataset.href;
+            fetch(link)
+                .then(function(response) {
+                    if(watchlistIcon.classList.contains('far')) {
+                        watchlistIcon.classList.remove('far');
+                        watchlistIcon.classList.add('fas');
+                    } else {
+                        watchlistIcon.classList.remove('fas');
+                        watchlistIcon.classList.add('far');
+                    }
+                });
+        }
+    </script>
 {% endblock %}

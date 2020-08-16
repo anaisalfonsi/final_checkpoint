@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use App\Repository\ArticleCategoryRepository;
 use App\Repository\CommentRepository;
@@ -95,6 +97,24 @@ class ArticleController extends AbstractController
             'form' => $form->createView(),
             'category' => $category,
             'slug' => $slug
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/watchlist", name="article_watchlist", methods={"GET","POST"})
+     */
+    public function addToWatchlist(Article $article, EntityManagerInterface $em) : Response
+    {
+        if ($this->getUser()->getArticles()->contains($article)) {
+            $this->getUser()->removeArticle($article);
+        }
+        else {
+            $this->getUser()->addArticle($article);
+        }
+        $em->flush();
+
+        return $this->json([
+            'isInWatchlist' => $this->getUser()->isInWatchlist($article)
         ]);
     }
 }

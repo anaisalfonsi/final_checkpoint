@@ -79,4 +79,17 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('home');
     }
+
+    /**
+     * @Route("{id}/favorites", name="user_favorites", methods={"GET"})
+     */
+    public function favoriteArticles(User $user)
+    {
+        $articles = $user->getArticles();
+
+        return $this->render('user/favorites.html.twig', [
+            'user' => $user,
+            'articles' => $articles
+        ]);
+    }
 }

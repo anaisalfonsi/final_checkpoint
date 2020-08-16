@@ -5,11 +5,25 @@
     <div class="container-fluid d-flex justify-content-end mr-5">
         <h1 id="big-title" class="mr-5">{{ user.name }}</h1>
     </div>
-    <div class="container mr-5">
-        <h3>{{ user.email }}</h3>
-            <img src="{{ vich_uploader_asset(user, 'avatarFile')}}" width="200" height="170">
-        <h6 class="mt-5"><a href="{{ path('profile_edit', {'id': user.id}) }}" class="btn">Edit Profile</a></h6>
-        <h6><a href="{{ path('avatar_edit', {'id': user.id}) }}" class="btn">Change Profile Picture</a></h6>
+    <div class="container">
+        <div class="card-group">
+            <div class="row flex-row-reverse col-12">
+                <div class="card col-12 col-md-6 profile-card">
+                    <div class="card-body profile-card-body">
+                        <img width="200" height="170"
+                             src="{{ vich_uploader_asset(user, 'avatarFile')}}">
+                        <h3>{{ user.email }}</h3>
+                        <h6 class=""><a href="{{ path('profile_edit', {'id': user.id}) }}" class="btn">Edit Profile</a></h6>
+                        <h6><a href="{{ path('avatar_edit', {'id': user.id}) }}" class="btn">Change Profile Picture</a></h6></div>
+                    </div>
+                <div class="card-body profile-card-body">
+                    <a href="{{ path('user_favorites', {'id' : user.id}) }}">Favorites</a>
+                </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
     <div class="white-space"></div>

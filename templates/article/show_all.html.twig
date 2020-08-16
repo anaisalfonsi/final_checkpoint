@@ -10,6 +10,10 @@
         <div class="card-group d-flex justify-content-center col-12 mb-5">
             <div class="card m-5 all-articles-card">
                 <img class="img-fluid" src="{{ article.image }}">
+                {% if app.user %}
+                    <i id="watchlist-{{ article.id }}" class="{{ app.user.isInWatchlist(article) ? 'fas' : 'far' }} fa-heart watchlist"
+                       data-href="{{path('article_watchlist', {'id': article.id})}}"></i>
+                {% endif %}
                 <div class="card-body">
                     <h3 class="card-title card-fonts">{{ article.title }}</h3>
                     <h5 class="subject card-fonts">{{ article.subject }}</h5>
@@ -25,4 +29,28 @@
     </div>
 </div>
     <div class="white-space"></div>
+{% endblock %}
+{% block javascripts %}
+    {% for article in articles %}
+        <script>
+            document.querySelectorAll("#watchlist-{{ article.id }}").forEach(function(link) {
+                link.addEventListener('click', addToWatchlist);
+            });
+            function addToWatchlist(event) {
+                event.preventDefault();
+                let watchlistIcon = event.target;
+                let link = watchlistIcon.dataset.href;
+                fetch(link)
+                    .then(function (response) {
+                        if (watchlistIcon.classList.contains('far')) {
+                            watchlistIcon.classList.remove('far');
+                            watchlistIcon.classList.add('fas');
+                        } else {
+                            watchlistIcon.classList.remove('fas');
+                            watchlistIcon.classList.add('far');
+                        }
+                    });
+            }
+        </script>
+    {% endfor %}
 {% endblock %}

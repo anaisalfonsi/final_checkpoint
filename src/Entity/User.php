@@ -71,6 +71,11 @@ class User implements UserInterface, \Serializable
      */
     private $comments;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Article::class)
+     */
+    private $articles;
+
     public function __toString()
     {
         return $this->getEmail();
@@ -79,6 +84,7 @@ class User implements UserInterface, \Serializable
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+        $this->articles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -264,6 +270,42 @@ class User implements UserInterface, \Serializable
             }
         }
 
+        return $this;
+    }
+
+    /**
+     * @return Collection|Article[]
+     */
+    public function getArticles(): Collection
+    {
+        return $this->articles;
+    }
+
+    public function addArticle(Article $article): self
+    {
+        if (!$this->articles->contains($article)) {
+            $this->articles[] = $article;
+        }
+
+        return $this;
+    }
+
+    public function removeArticle(Article $article): self
+    {
+        if ($this->articles->contains($article)) {
+            $this->articles->removeElement($article);
+        }
+
+        return $this;
+    }
+
+    public function isInWatchlist(Article $article): bool
+    {
+        if ($this->articles->contains($article)) {
+            return true;
+        } else {
+            return false;
+        }
         return $this;
     }
 }
