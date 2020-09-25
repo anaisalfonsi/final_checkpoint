@@ -1,3 +1,35 @@
 body {
     background: var(--black);
 }
+
+a, p {
+    background: -webkit-linear-gradient(var(--lightvolt), var(--lightviolet));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a:hover {
+    color: var(--volt);
+}
+
+.nav-drop-item {
+    background: -webkit-linear-gradient(var(--kaki), var(--darkbrown));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#big-title {
+    background: -webkit-linear-gradient(var(--volt), var(--violet), var(--volt));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    background: -webkit-linear-gradient(var(--violet), var(--lightvolt), var(--volt));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
