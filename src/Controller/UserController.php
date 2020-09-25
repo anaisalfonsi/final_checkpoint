@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Article;
 use App\Form\UserType;
 use App\Repository\UserRepository;
+use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -83,13 +85,13 @@ class UserController extends AbstractController
     /**
      * @Route("{id}/favorites", name="user_favorites", methods={"GET"})
      */
-    public function favoriteArticles(User $user)
+    public function favoriteArticles() : Response
     {
-        $articles = $user->getArticles();
-
-        return $this->render('user/favorites.html.twig', [
-            'user' => $user,
-            'articles' => $articles
-        ]);
+        return $this->json(
+            $this->getUser()->getArticles(),
+            200,
+            [],
+            ['groups' => 'article:preview']
+        );
     }
 }

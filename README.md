@@ -26,6 +26,7 @@ AS AN USER:
 - Be alerted when a new article has been posted
 - Have a tarot reading online, with random rapper messages ^^
 - Whether you're logged in or not, contact the W. team about any subject
+- Put articles in your favorites
 
 AS AN ADMIN:
 - CRUD ARTICLE, USER, BLOG THEMES
@@ -33,6 +34,7 @@ AS AN ADMIN:
 
 # Later on:
 - Music Player
+- Change profile picture JS
 
 ### HOW TO INSTALL PROJECT
 
@@ -57,3 +59,8 @@ commands to run:
   
   I think that's it! Hope you'll enjoy :)
 
+
+
+# Note to self:
+- Embedding Controllers for categories in the navbar
+- finish fetch favorites data on user profile

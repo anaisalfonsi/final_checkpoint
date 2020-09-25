@@ -10,15 +10,15 @@
         <div class="card-group d-flex justify-content-center col-12 mb-5">
             <div class="card m-5 all-articles-card">
                 <img class="img-fluid" src="{{ article.image }}">
-                {% if app.user %}
-                    <i id="watchlist-{{ article.id }}" class="{{ app.user.isInWatchlist(article) ? 'fas' : 'far' }} fa-heart watchlist"
-                       data-href="{{path('article_watchlist', {'id': article.id})}}"></i>
-                {% endif %}
                 <div class="card-body">
                     <h3 class="card-title card-fonts">{{ article.title }}</h3>
                     <h5 class="subject card-fonts">{{ article.subject }}</h5>
                     <h5 class="card-fonts">{{ article.author }}</h5>
                     <h5 class="theme-word card-fonts">{{ article.category.category }}</h5>
+                    {% if app.user %}
+                        <i id="watchlist-{{ article.id }}" class="{{ app.user.isInWatchlist(article) ? 'fas' : 'far' }} fa-heart watchlist"
+                           data-href="{{ path('article_watchlist', {'id': article.id}) }}"></i>
+                    {% endif %}
                     <div class="card-footer">
                         <a href="{{ path('article_show_one', {'id': article.id}) }}" class="btn">See More</a>
                     </div>

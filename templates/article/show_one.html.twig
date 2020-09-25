@@ -21,7 +21,7 @@
                 <img src="{{ article.image }}" class="img-fluid m-3">
                 {% if app.user %}
                     <i id="watchlist" class="{{ app.user.isInWatchlist(article) ? 'fas' : 'far' }} fa-heart watchlist"
-                       data-href="{{path('article_watchlist', {'id': article.id})}}"></i>
+                       data-href="{{ path('article_watchlist', {'id': article.id}) }}"></i>
                 {% endif %}
             </div>
             <div class="col-12">

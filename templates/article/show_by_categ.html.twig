@@ -15,7 +15,7 @@
                     <img class="img-fluid mt-2" src="{{ article.image }}" width="400" height="250">
                     {% if app.user %}
                         <i id="watchlist-{{ article.id }}" class="{{ app.user.isInWatchlist(article) ? 'fas' : 'far' }} fa-heart watchlist"
-                           data-href="{{path('article_watchlist', {'id': article.id})}}"></i>
+                           data-href="{{ path('article_watchlist', {'id': article.id}) }}"></i>
                     {% endif %}
                     <div class="container-fluid themed-articles-btn">
                         <a href="{{ path('article_show_one', {'id': article.id}) }}" class="btn">See More</a>

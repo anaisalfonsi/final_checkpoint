@@ -17,7 +17,12 @@
                         <h6><a href="{{ path('avatar_edit', {'id': user.id}) }}" class="btn">Change Profile Picture</a></h6></div>
                     </div>
                 <div class="card-body profile-card-body">
-                    <a href="{{ path('user_favorites', {'id' : user.id}) }}">Favorites</a>
+                    <a href="{{ path('user_favorites', {'id' : user.id}) }}">Json</a>
+                            <h4><i id="favorites" data-href="{{ path('user_favorites', {'id' : user.id}) }}" class="fas fa-heart favorites">
+                        </i> Favorite Articles</h4>
+                    <div id="favorite-articles">
+                        <button id="btn-load" class="btn load-more">More Articles</button>
+                    </div>
                 </div>
                 </div>
 
@@ -27,4 +32,28 @@
     </div>
 </div>
     <div class="white-space"></div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        document.querySelector("#favorites").addEventListener('click', favoriteArticles);
+        function favoriteArticles(event) {
+            let favoriteIcon = event.target;
+            let link = favoriteIcon.dataset.href;
+            fetch(link)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(favorite) {
+                    console.log('data decoded from JSON:', favorite);
+                    favorite.forEach(element => console.log(element));
+                    let favoritesHtml = `
+                        <p><strong>${favorite.title}</strong></p>
+                        <p><medimum>${favorite.subject}</medium></p>
+                        <img src="${favorite.image}" />
+                        <p><medimum>${favorite.published_at}</medium></p>
+                    `;
+                    document.querySelector('#favorite-articles').innerHTML = favoritesHtml;
+                });
+        }
+    </script>
 {% endblock %}
