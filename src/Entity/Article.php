@@ -6,6 +6,7 @@ use App\Repository\ArticleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
@@ -16,16 +17,19 @@ class Article
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"article:preview"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"article:preview"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"article:preview"})
      */
     private $subject;
 
@@ -36,6 +40,7 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=500, nullable=true)
+     * @Groups({"article:preview"})
      */
     private $image;
 
@@ -51,6 +56,7 @@ class Article
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"article:preview"})
      */
     private $published_at;
 
