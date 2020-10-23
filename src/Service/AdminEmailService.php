@@ -33,7 +33,7 @@ class AdminEmailService {
                     $newEmail = new TemplatedEmail();
                     $newEmail
                         ->from('d5723b0139-e2ef70@inbox.mailtrap.io')
-                        ->to($userMail)
+                        ->to(...$userAddresses)
                         ->subject('A new Article is Out!')
                         ->htmlTemplate('user/email/new_article_email.html.twig')
                         ->context([
