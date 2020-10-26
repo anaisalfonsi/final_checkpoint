@@ -4,11 +4,11 @@ Welcome! ^^
 
 User Stories, Wireframes, and CMD >>> https://miro.com/app/board/o9J_kozA1bQ=/
 
-Video Project Overview >>> https://www.loom.com/share/7592f32e85fd40b9a86ca71e7e4ed4d6
+Video Project Overview (in French) >>> https://www.loom.com/share/7592f32e85fd40b9a86ca71e7e4ed4d6
 
-Video Demo Part 1 >>> https://www.loom.com/share/b72781c1053546ffaebe0ac8807b88c3
+Video Demo Part 1 (in French) >>> https://www.loom.com/share/b72781c1053546ffaebe0ac8807b88c3
 
-Video Demo Part 2 >>> https://www.loom.com/share/9afdeb5f924145b1906ed2efe078c3ff
+Video Demo Part 2 (in French) >>> https://www.loom.com/share/9afdeb5f924145b1906ed2efe078c3ff
 
 
 # W. is a blog/oracle card reading based on Travis Scott Universe. 
