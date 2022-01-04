@@ -4,7 +4,7 @@ Welcome! ^^
 
 User Stories, Wireframes, and CMD >>> https://miro.com/app/board/o9J_kozA1bQ=/
 
-Video Project Overview (in French) >>> https://www.loom.com/share/7592f32e85fd40b9a86ca71e7e4ed4d6
+Démo Présentation (Video Project Overview in French) >>> https://www.loom.com/share/7592f32e85fd40b9a86ca71e7e4ed4d6
 
 Video Demo Part 1 (in French) >>> https://www.loom.com/share/b72781c1053546ffaebe0ac8807b88c3
 
