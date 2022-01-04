@@ -11,10 +11,10 @@ Video Demo Part 1 (in French) >>> https://www.loom.com/share/b72781c1053546ffaeb
 Video Demo Part 2 (in French) >>> https://www.loom.com/share/9afdeb5f924145b1906ed2efe078c3ff
 
 
-# W. is a blog/oracle card reading based on Travis Scott Universe. 
+# W. is a blog with oracle card reading based on Travis Scott Universe. 
 
-To me, he's the only artist that has made the idea of a circus "sexy". Also we share a lot of common interests : like eclectic music, astrology, strong colors, bling bling and we both have deep fascination for the cosmos.
-Also, Travis has a lot of awesome gifs and photos. Which I find very fun to work with.
+To me, Travis has made the idea of a circus attractive. We share a lot of common interests, like : eclectic music, astrology, strong colors, jewelry and deep connection to the cosmos.
+Also, Travis has a lot of awesome gifs and photos. Which I've found very fun to work with.
 
 In conclusion, W. is a tribute to our crazy worlds, not so far from each other. 
 
